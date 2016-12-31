@@ -22,10 +22,25 @@ public class MainActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG).setAction("Action", null)
+                        .show();
             }
         });
+
+        LogUtils.v("this is a verbose message");
+        LogUtils.v("verbose", "verbose tag message");
+
+        LogUtils.d("this is a debug message");
+        LogUtils.d("debug", "debug tag message");
+
+        LogUtils.i("this is a info message");
+        LogUtils.i("info", "info tag message");
+
+        LogUtils.w("this is a warning message");
+        LogUtils.w("warning", "warning tag message");
+
+        LogUtils.e("this is a error message");
+        LogUtils.e("error", "error tag message");
     }
 
     @Override
