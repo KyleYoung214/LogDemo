@@ -1,4 +1,4 @@
-package com.kyle.demo;
+package com.kyle.demo.utils;
 
 import android.text.TextUtils;
 import android.util.Log;
@@ -20,7 +20,7 @@ public class LogUtils {
     public static void v(String message) {
         if (LEVEL <= VERBOSE) {
             StackTraceElement stackTraceElement = Thread.currentThread().getStackTrace()[3];
-            Log.v(getDefaultTag(stackTraceElement), "[" + stackTraceElement.getMethodName() + "]: " + message);
+            Log.v(getDefaultTag(stackTraceElement), "[" + stackTraceElement.getMethodName() + "]:" + " " + message);
         }
     }
 
@@ -38,7 +38,7 @@ public class LogUtils {
     public static void d(String message) {
         if (LEVEL <= DEBUG) {
             StackTraceElement stackTraceElement = Thread.currentThread().getStackTrace()[3];
-            Log.d(getDefaultTag(stackTraceElement), "[" + stackTraceElement.getMethodName() + "]: " + message);
+            Log.d(getDefaultTag(stackTraceElement), "[" + stackTraceElement.getMethodName() + "]:" + " " + message);
         }
     }
 
@@ -56,7 +56,7 @@ public class LogUtils {
     public static void i(String message) {
         if (LEVEL <= INFO) {
             StackTraceElement stackTraceElement = Thread.currentThread().getStackTrace()[3];
-            Log.i(getDefaultTag(stackTraceElement), "[" + stackTraceElement.getMethodName() + "]: " + message);
+            Log.i(getDefaultTag(stackTraceElement), "[" + stackTraceElement.getMethodName() + "]:" + " " + message);
         }
     }
 
@@ -74,7 +74,7 @@ public class LogUtils {
     public static void w(String message) {
         if (LEVEL <= WARN) {
             StackTraceElement stackTraceElement = Thread.currentThread().getStackTrace()[3];
-            Log.w(getDefaultTag(stackTraceElement), "[" + stackTraceElement.getMethodName() + "]: " + message);
+            Log.w(getDefaultTag(stackTraceElement), "[" + stackTraceElement.getMethodName() + "]:" + " " + message);
         }
     }
 
@@ -92,7 +92,7 @@ public class LogUtils {
     public static void e(String message) {
         if (LEVEL <= ERROR) {
             StackTraceElement stackTraceElement = Thread.currentThread().getStackTrace()[3];
-            Log.e(getDefaultTag(stackTraceElement), "[" + stackTraceElement.getMethodName() + "]: " + message);
+            Log.e(getDefaultTag(stackTraceElement), "[" + stackTraceElement.getMethodName() + "]:" + " " + message);
         }
     }
 

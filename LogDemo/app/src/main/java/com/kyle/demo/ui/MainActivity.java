@@ -1,13 +1,24 @@
-package com.kyle.demo;
+package com.kyle.demo.ui;
 
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.TypedValue;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+
+import com.kyle.demo.R;
+import com.kyle.demo.utils.LogUtils;
+
+import io.reactivex.Observable;
+import io.reactivex.ObservableEmitter;
+import io.reactivex.ObservableOnSubscribe;
+import io.reactivex.Observer;
+import io.reactivex.disposables.Disposable;
+import io.reactivex.schedulers.Schedulers;
 
 public class MainActivity extends AppCompatActivity {
 
