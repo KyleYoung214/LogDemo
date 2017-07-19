@@ -10,7 +10,10 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.kyle.demo.Contants.NumberCnts;
 import com.kyle.demo.R;
+import com.kyle.demo.strategy.InsertSort;
+import com.kyle.demo.strategy.SortIntegers;
 import com.kyle.demo.utils.LogUtils;
 
 import io.reactivex.Observable;
@@ -20,7 +23,7 @@ import io.reactivex.Observer;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.schedulers.Schedulers;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,20 +41,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        LogUtils.v("this is a verbose message");
-        LogUtils.v("verbose", "verbose tag message");
-
-        LogUtils.d("this is a debug message");
-        LogUtils.d("debug", "debug tag message");
-
-        LogUtils.i("this is a info message");
-        LogUtils.i("info", "info tag message");
-
-        LogUtils.w("this is a warning message");
-        LogUtils.w("warning", "warning tag message");
-
-        LogUtils.e("this is a error message");
-        LogUtils.e("error", "error tag message");
+        initViews();
+        printLogs();
     }
 
     @Override
@@ -74,5 +65,39 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.function1_btn:
+                SortIntegers sortIntegers = new SortIntegers();
+                sortIntegers.setIntegers(NumberCnts.unsortedIntegers);
+                sortIntegers.setSortMethod(new InsertSort());
+                sortIntegers.sortAndPrint();
+                break;
+        }
+    }
+
+    private void initViews() {
+        findViewById(R.id.function1_btn).setOnClickListener(this);
+        findViewById(R.id.function2_btn).setOnClickListener(this);
+    }
+
+    private void printLogs() {
+        LogUtils.v("this is a verbose message");
+        LogUtils.v("verbose", "verbose tag message");
+
+        LogUtils.d("this is a debug message");
+        LogUtils.d("debug", "debug tag message");
+
+        LogUtils.i("this is a info message");
+        LogUtils.i("info", "info tag message");
+
+        LogUtils.w("this is a warning message");
+        LogUtils.w("warning", "warning tag message");
+
+        LogUtils.e("this is a error message");
+        LogUtils.e("error", "error tag message");
     }
 }
