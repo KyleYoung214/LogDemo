@@ -5,23 +5,16 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.TypedValue;
-import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 import com.kyle.demo.Contants.NumberCnts;
 import com.kyle.demo.R;
+import com.kyle.demo.strategy.BubbleSort;
 import com.kyle.demo.strategy.InsertSort;
 import com.kyle.demo.strategy.SortIntegers;
 import com.kyle.demo.utils.LogUtils;
-
-import io.reactivex.Observable;
-import io.reactivex.ObservableEmitter;
-import io.reactivex.ObservableOnSubscribe;
-import io.reactivex.Observer;
-import io.reactivex.disposables.Disposable;
-import io.reactivex.schedulers.Schedulers;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -73,8 +66,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.function1_btn:
                 SortIntegers sortIntegers = new SortIntegers();
                 sortIntegers.setIntegers(NumberCnts.unsortedIntegers);
-                sortIntegers.setSortMethod(new InsertSort());
+                //sortIntegers.setSortMethod(new InsertSort());
+                sortIntegers.setSortMethod(new BubbleSort());
                 sortIntegers.sortAndPrint();
+                break;
+            case R.id.function2_btn:
                 break;
         }
     }
