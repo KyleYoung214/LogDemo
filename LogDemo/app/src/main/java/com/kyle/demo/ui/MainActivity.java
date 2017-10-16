@@ -12,7 +12,10 @@ import android.view.View;
 import com.kyle.demo.Contants.NumberCnts;
 import com.kyle.demo.R;
 import com.kyle.demo.strategy.BubbleSort;
+import com.kyle.demo.strategy.HeapSort;
 import com.kyle.demo.strategy.InsertSort;
+import com.kyle.demo.strategy.QuickSort;
+import com.kyle.demo.strategy.SelectSort;
 import com.kyle.demo.strategy.SortIntegers;
 import com.kyle.demo.utils.LogUtils;
 
@@ -67,7 +70,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 SortIntegers sortIntegers = new SortIntegers();
                 sortIntegers.setIntegers(NumberCnts.unsortedIntegers);
                 //sortIntegers.setSortMethod(new InsertSort());
-                sortIntegers.setSortMethod(new BubbleSort());
+                //sortIntegers.setSortMethod(new BubbleSort());
+                //sortIntegers.setSortMethod(new QuickSort());
+                //sortIntegers.setSortMethod(new HeapSort());
+                sortIntegers.setSortMethod(new SelectSort());
                 sortIntegers.sortAndPrint();
                 break;
             case R.id.function2_btn:
